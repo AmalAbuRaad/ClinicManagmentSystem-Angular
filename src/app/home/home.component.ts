@@ -4,8 +4,10 @@ import { ActivatedRoute, Params, Router } from '@angular/router';
 import { interval, Subscription, } from 'rxjs';
 import {filter, map} from 'rxjs/operators';
 import { Appointment } from '../models/appointment';
+import { AppointmentType } from '../models/appointmentType';
 import { Doctor } from '../models/doctor';
 import { Patient } from '../models/patient';
+import { AppointmentTypesService } from '../services/appointment-types.service';
 import { AppointmentsService } from '../services/appointments.service';
 import { DoctorsService } from '../services/doctors.service';
 import { PatientsService } from '../services/patients.services';
@@ -20,13 +22,15 @@ const ELEMENT_DATA: Appointment[] = [];
 export class HomeComponent implements OnInit {
 
   appointment: Appointment;
-  displayedColumns: string[] = ['doctorName','patientName', 'reservation'];
+  displayedColumns: string[] = ['doctorName','patientName', 'reservation', 'appointmentType'];
   dataSource = ELEMENT_DATA;
   patient: Patient;
   doctor: Doctor;
+  appointmentType: AppointmentType;
 
   constructor(private route:ActivatedRoute, private appointmentService:AppointmentsService,
-    private patientService:PatientsService, private doctorService:DoctorsService) { }
+    private patientService:PatientsService, private doctorService:DoctorsService,
+    private appointmentTypeService: AppointmentTypesService) { }
 
   ngOnInit(): void {
     
@@ -45,8 +49,12 @@ export class HomeComponent implements OnInit {
           this.doctor = this.doctorService.doctors.find(d=>d.id==this.appointment.doctorId)as Doctor;})
           this.appointment.doctor=this.doctor;
 
+        this.route.params.subscribe((params:Params)=>{
+          this.appointmentType = this.appointmentTypeService.appointmentTypes.find(a=>a.id==this.appointment.appointmentTypeId)as AppointmentType;})
+          this.appointment.type=this.appointmentType;
+
+        console.log(this.appointment);
         console.log(this.dataSource[i]);
-        console.log(this.appointment.patient.fullName);
       }
   
   

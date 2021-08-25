@@ -1,7 +1,9 @@
 import { HttpErrorResponse } from '@angular/common/http';
 import { Component, OnInit } from '@angular/core';
 import { Appointment } from './models/appointment';
+import { AppointmentType } from './models/appointmentType';
 import { Country } from './models/country';
+import { AppointmentTypesService } from './services/appointment-types.service';
 import { AppointmentsService } from './services/appointments.service';
 import { CountriesService } from './services/countries.service';
 
@@ -16,9 +18,11 @@ export class AppComponent implements OnInit {
   appointments: Appointment[];
   error: string;
   countries: Country[];
+  appointmentTypes: AppointmentType[];
 
 
-  constructor( private appointmentService: AppointmentsService, private countryService: CountriesService) {
+  constructor( private appointmentService: AppointmentsService, private countryService: CountriesService
+    , private appointmentTypeService: AppointmentTypesService) {
   }
 
   ngOnInit(): void {
@@ -34,6 +38,14 @@ export class AppComponent implements OnInit {
     this.countryService.getCountries()
       .subscribe(response => {
         this.countries = response;
+      },
+        (error: HttpErrorResponse) => {
+          this.error = error.message;
+        });;
+
+    this.appointmentTypeService.getTypes()
+      .subscribe(response => {
+        this.appointmentTypes = response;
       },
         (error: HttpErrorResponse) => {
           this.error = error.message;
