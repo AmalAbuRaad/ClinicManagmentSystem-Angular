@@ -112,6 +112,7 @@
               id="specialization"
               [ngModel]="doctor.specialization"
               name="specialization"
+              required
             >
               <option *ngFor="let item of specializations" [ngValue]="item">
                 {{ item.specializationName }}
