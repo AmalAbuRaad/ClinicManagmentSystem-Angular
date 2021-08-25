@@ -1,0 +1,47 @@
+mat-card-content div {
+  padding: 5px;
+  font-weight: bold;
+  font-size: 12px;
+}
+::ng-deep .mat-icon {
+  height: 15px !important;
+  width: 15px !important;
+  font-size: 15px !important;
+}
+.clickable {
+  cursor: pointer;
+}
+
+mat-card {
+  padding: 0px;
+  margin-bottom: 20px;
+  width: 225px;
+  font-family: Georgia, serif;
+}
+
+mat-card-header {
+  background-color: #002b5c;
+  padding-top: 7px;
+  height: 34px;
+}
+
+.mat-card-title {
+  margin-left: -8px;
+  color: white;
+  font-size: 12px;
+}
+
+mat-card-footer {
+  margin-left: 60px;
+  margin-top: 0px;
+}
+
+.edit-button {
+  text-align: left;
+  margin: 10px;
+  margin-top: 0px;
+  font-size: 10px;
+  background-color: #2e5480;
+  border: none;
+  color: white;
+}

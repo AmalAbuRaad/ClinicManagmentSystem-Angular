@@ -1,0 +1,25 @@
+<div class="row">
+  <p class="alert-danger">{{ error }}</p>
+  <div class="col col-12" *ngIf="isLoading">
+    <mat-spinner [diameter]="30"></mat-spinner>
+  </div>
+  <div
+    style="padding-bottom: 10px; display: inline; display: flex"
+    class="col col-12"
+  >
+    <h1 style="color: black; padding-right: 840px; font-family: Georgia, serif">
+      Doctors
+    </h1>
+    <button color="primary" (click)="onAddDoctor()" mat-mini-fab>
+      <mat-icon>add</mat-icon>
+    </button>
+  </div>
+  <br /><br />
+  <div class="col col-2">
+    <app-doctor-item *ngFor="let item of doctors" [doctorItem]="item">
+    </app-doctor-item>
+  </div>
+  <div class="col col-9 offset-1">
+    <router-outlet></router-outlet>
+  </div>
+</div>

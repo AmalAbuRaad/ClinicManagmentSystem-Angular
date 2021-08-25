@@ -1,0 +1,98 @@
+<mat-card class="mat-elevation-z8" style="padding-bottom: 25px">
+  <mat-card-header style="padding-top: 7px; height: 34px">
+    <mat-card-title>
+      <div>Doctor's Details</div>
+    </mat-card-title>
+  </mat-card-header>
+
+  <mat-card-content style="margin-top: 15px">
+    <div class="row">
+      <div class="col col-2">
+        <mat-label>First Name</mat-label>
+      </div>
+      <div class="col col-10" style="font-weight: normal">
+        <p>{{ doctor.firstName }}</p>
+      </div>
+      <div class="col col-2">
+        <mat-label>Last Name</mat-label>
+      </div>
+      <div class="col col-10" style="font-weight: normal">
+        <p>{{ doctor.lastName }}</p>
+      </div>
+      <div class="col col-2">
+        <mat-label>Monthly Salary</mat-label>
+      </div>
+      <div class="col col-10" style="font-weight: normal">
+        <p>{{ doctor.monthlySalary }}</p>
+      </div>
+      <div class="col col-2">
+        <mat-label>Email</mat-label>
+      </div>
+      <div class="col col-10" style="font-weight: normal">
+        <p>{{ doctor.email }}</p>
+      </div>
+      <div class="col col-2">
+        <mat-label>Country</mat-label>
+      </div>
+      <div class="col col-10" style="font-weight: normal">
+        <p>{{ doctor.country }}</p>
+      </div>
+      <div class="col col-2">
+        <mat-label>Appointments</mat-label>
+      </div>
+      <div class="col col-10" style="font-weight: normal">
+        <p>{{ doctor.appointments }}</p>
+      </div>
+      <div class="col col-2">
+        <mat-label>Specialization</mat-label>
+      </div>
+      <div class="col col-10" style="font-weight: normal">
+        <p>{{ specialization.specializationName }}</p>
+      </div>
+      <div class="col col-2">
+        <mat-label>Address</mat-label>
+      </div>
+      <div class="col col-10" style="font-weight: normal">
+        <p>{{ doctor.address }}</p>
+      </div>
+      <div class="col col-2">
+        <mat-label>Notes</mat-label>
+      </div>
+      <div class="col col-10" style="font-weight: normal">
+        <p>{{ doctor.notes }}</p>
+      </div>
+      <div class="col col-2">
+        <mat-label>Phone Number</mat-label>
+      </div>
+      <div class="col col-10" style="font-weight: normal">
+        <p>{{ doctor.phoneNumber }}</p>
+      </div>
+      <div class="col col-2">
+        <mat-label>IBAN</mat-label>
+      </div>
+      <div class="col col-10" style="font-weight: normal">
+        <p>{{ doctor.iban }}</p>
+      </div>
+    </div>
+  </mat-card-content>
+
+  <mat-card-footer style="margin-left: 5px; margin-top: -60px">
+    <button
+      class="edit-button"
+      [routerLink]="['/doctors', doctor.id, 'edit']"
+      (click)="onEdit(doctor.id)"
+    >
+      <span>Edit Doctor</span>
+      <mat-icon style="padding-left: 5px">edit</mat-icon>
+    </button>
+    <button
+      (click)="onDeleteDoctor(doctor.id)"
+      class="delete-button btn-danger"
+    >
+      <span>Delete Doctor</span>
+      <mat-icon style="padding-left: 5px">delete</mat-icon>
+    </button>
+  </mat-card-footer>
+  <br />
+  <br />
+</mat-card>

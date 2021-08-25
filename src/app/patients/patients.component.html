@@ -1,0 +1,61 @@
+<!-- <p  [appHighlight]="'gray'">Attribute Directive</p>
+<p  *appHidden="showDirective">Structural Directive</p>
+<p >{{message | shorten:5}}</p>
+
+<p >{{currentDate | date:'fullDate'}}</p>
+<hr/>
+<br/> -->
+<div class="row">
+  <p class="alert-danger">{{ error }}</p>
+  <div class="col col-12" *ngIf="isLoading">
+    <mat-spinner [diameter]="30"></mat-spinner>
+  </div>
+  <div
+    style="padding-bottom: 10px; display: inline; display: flex"
+    class="col col-12"
+  >
+    <h1 style="color: black; padding-right: 840px; font-family: Georgia, serif">
+      Patients
+    </h1>
+    <button color="primary" (click)="onAddPatient()" mat-mini-fab>
+      <mat-icon>add</mat-icon>
+    </button>
+  </div>
+  <!--<div class="col col-12">
+    <mat-form-field class="example-full-width" appearance="fill">
+      <mat-label for="search">Search By Name</mat-label>
+      <input
+        type="text"
+        class="form-control"
+        id="search"
+        name="search"
+        #search
+        matInput
+      />
+      <button class="btn btn-primary btn-sm" (click)="ngOnInit()">
+        Search
+      </button>
+    </mat-form-field>
+  </div>-->
+
+  <br /><br />
+  <div class="col col-2">
+    <!-- <app-patients-header (patientsAdded)="addPatient($event)"></app-patients-header>
+
+        <br/> -->
+
+    <app-patient-item *ngFor="let item of patients" [patientItem]="item">
+      <!-- <p>This is inside component</p> -->
+    </app-patient-item>
+  </div>
+  <div class="col col-9 offset-1">
+    <router-outlet></router-outlet>
+  </div>
+
+  <div class="col col-2">
+    <button color="warn" (click)="onClearPatients()" mat-flat-button>
+      Clear All
+      <mat-icon>clear</mat-icon>
+    </button>
+  </div>
+</div>

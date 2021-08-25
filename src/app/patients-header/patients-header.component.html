@@ -1,0 +1,45 @@
+<div class="row">
+  <div class="col-6">
+    <!-- <h1 [ngStyle]="{'background-color':'yellow'}"
+    [ngClass]="{'white-element': isWhite}"
+>{{getFullName()}}</h1> -->
+
+    <!-- <p *ngIf="showMessage">This is Testing Directive</p> -->
+
+    <!-- <input type="text" class="form-control" [(ngModel)]="firstName"/>  -->
+    <div class="row">
+      <div class="col-4">
+        <input
+          type="text"
+          placeholder="firstName"
+          class="form-control"
+          #firstName
+        />
+      </div>
+
+      <div class="col-4">
+        <input
+          type="text"
+          placeholder="lastName"
+          class="form-control"
+          #lastName
+        />
+      </div>
+      <div class="col-4">
+        <input type="text" placeholder="age" class="form-control" #age />
+      </div>
+    </div>
+
+    <!-- <p>{{firstName}}</p> -->
+  </div>
+
+  <div class="col-6">
+    <button
+      style="margin: 30px"
+      class="btn btn-primary btn-sm"
+      (click)="addPatient(firstName, lastName, age)"
+    >
+      Add Patient
+    </button>
+  </div>
+</div>

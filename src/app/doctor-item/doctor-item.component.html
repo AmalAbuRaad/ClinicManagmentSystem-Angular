@@ -1,0 +1,30 @@
+<mat-card (click)="onCardClick(doctor.id)" class="mat-elevation-z8 clickable">
+  <mat-card-header>
+    <mat-card-title>
+      <div>Doctor {{ doctor.id }}</div>
+    </mat-card-title>
+  </mat-card-header>
+
+  <mat-card-content>
+    <div>First Name: {{ doctor.firstName }}</div>
+    <mat-divider></mat-divider>
+    <div>Last Name: {{ doctor.lastName }}</div>
+    <mat-divider></mat-divider>
+    <div>Email: {{ doctor.email }}</div>
+    <mat-divider></mat-divider>
+  </mat-card-content>
+
+  <mat-card-footer>
+    <button
+      class="edit-button"
+      (click)="onEdit(doctor.id)"
+      [routerLink]="['/doctors', doctor.id, 'edit']"
+    >
+      <span>Edit Doctor</span>
+      <mat-icon style="padding-left: 5px">edit</mat-icon>
+    </button>
+  </mat-card-footer>
+</mat-card>
+
+<br />
+<ng-content></ng-content>

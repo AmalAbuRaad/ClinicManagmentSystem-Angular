@@ -1,0 +1,41 @@
+<!-- <h1>This is App Component</h1> -->
+
+<mat-toolbar> Clinic Management System </mat-toolbar>
+
+<mat-sidenav-container>
+  <mat-sidenav class="mat-elevation-z8" mode="side" opened>
+    <button
+      class="menu-button"
+      [routerLink]="''"
+      [routerLinkActive]="'active'"
+      [routerLinkActiveOptions]="{ exact: true }"
+      mat-button
+    >
+      <span>Home</span>
+    </button>
+
+    <button
+      class="nav-link menu-button"
+      [routerLink]="'/patients'"
+      [routerLinkActive]="'active'"
+      mat-button
+    >
+      <span>Patients</span>
+    </button>
+
+    <button
+      class="nav-link menu-button"
+      [routerLink]="'/doctors'"
+      [routerLinkActive]="'active'"
+      mat-button
+    >
+      <span>Doctors</span>
+    </button>
+  </mat-sidenav>
+
+  <mat-sidenav-content>
+    <div class="content mat-elevation-z8">
+      <router-outlet></router-outlet>
+    </div>
+  </mat-sidenav-content>
+</mat-sidenav-container>

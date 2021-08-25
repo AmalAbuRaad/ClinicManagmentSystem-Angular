@@ -1,0 +1,111 @@
+<mat-card class="mat-elevation-z8" style="padding-bottom: 25px">
+  <mat-card-header style="padding-top: 7px; height: 34px">
+    <mat-card-title
+      style="
+        margin-left: -8px;
+        color: black;
+        font-size: 32px;
+        font-family: Georgia, serif;
+      "
+    >
+      <div>Patient's Details</div>
+    </mat-card-title>
+  </mat-card-header>
+
+  <mat-card-content style="margin-top: 15px">
+    <div class="row">
+      <div class="col col-2">
+        <mat-label>First Name</mat-label>
+      </div>
+      <div class="col col-10" style="font-weight: normal">
+        <p>{{ patient.firstName }}</p>
+      </div>
+      <div class="col col-2">
+        <mat-label>Last Name</mat-label>
+      </div>
+      <div class="col col-10" style="font-weight: normal">
+        <p>{{ patient.lastName }}</p>
+      </div>
+      <div class="col col-2">
+        <mat-label>Age</mat-label>
+      </div>
+      <div class="col col-10" style="font-weight: normal">
+        <p>{{ patient.age }}</p>
+      </div>
+      <div class="col col-2">
+        <mat-label>Email</mat-label>
+      </div>
+      <div class="col col-10" style="font-weight: normal">
+        <p>{{ patient.email }}</p>
+      </div>
+      <div class="col col-2">
+        <mat-label>Gender</mat-label>
+      </div>
+      <div class="col col-10" style="font-weight: normal">
+        <p>{{ patient.gender }}</p>
+      </div>
+      <div class="col col-2">
+        <mat-label>Country</mat-label>
+      </div>
+      <div class="col col-10" style="font-weight: normal">
+        <p>{{ patient.country }}</p>
+      </div>
+      <div class="col col-2">
+        <mat-label>SSN</mat-label>
+      </div>
+      <div class="col col-10" style="font-weight: normal">
+        <p>{{ patient.ssn }}</p>
+      </div>
+      <div class="col col-2">
+        <mat-label>Address</mat-label>
+      </div>
+      <div class="col col-10" style="font-weight: normal">
+        <p>{{ patient.address }}</p>
+      </div>
+      <div class="col col-2">
+        <mat-label>PhoneNumber</mat-label>
+      </div>
+      <div class="col col-10" style="font-weight: normal">
+        <p>{{ patient.phoneNumber }}</p>
+      </div>
+    </div>
+  </mat-card-content>
+
+  <!-- <a class="btn btn-primary bt-sm" [routerLink]="['/patients', patient.id,'edit']">Edit</a> -->
+  <mat-card-footer style="margin-left: 5px; margin-top: -60px">
+    <button
+      [routerLink]="['/patients', patient.id, 'edit']"
+      (click)="onEdit(patient.id)"
+      style="
+        text-align: left;
+        margin: 10px;
+        margin-top: 0px;
+        font-size: 10px;
+        background-color: #2e5480;
+        border: none;
+        color: white;
+      "
+    >
+      <span>Edit Patient</span>
+      <mat-icon style="padding-left: 5px">edit</mat-icon>
+    </button>
+    <button
+      (click)="onDeletePatient(patient.id)"
+      class="btn-danger"
+      style="
+        text-align: left;
+        margin: 10px;
+        margin-top: 0px;
+        font-size: 10px;
+
+        border: none;
+        color: white;
+      "
+    >
+      <span>Delete Patient</span>
+      <mat-icon style="padding-left: 5px">delete</mat-icon>
+    </button>
+  </mat-card-footer>
+  <br />
+  <br />
+</mat-card>

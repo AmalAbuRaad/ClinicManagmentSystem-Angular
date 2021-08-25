@@ -1,0 +1,183 @@
+<mat-card class="mat-elevation-z8" style="padding: 15px">
+  <mat-card-content>
+    <div class="row">
+      <div class="col col-12">
+        <form (ngSubmit)="onSubmit(editForm)" #editForm="ngForm">
+          <input type="hidden" [ngModel]="doctor.id" name="id" />
+          <input type="hidden" [ngModel]="doctor.key" name="key" />
+          <input
+            type="hidden"
+            [ngModel]="doctor.specializationId"
+            name="specializationId"
+          />
+          <mat-form-field class="example-full-width" appearance="fill">
+            <mat-label for="firstName">First Name</mat-label>
+            <input
+              type="text"
+              class="form-control"
+              #firstName="ngModel"
+              [ngModel]="doctor.firstName"
+              id="firstName"
+              name="firstName"
+              required
+              matInput
+            />
+            <span
+              *ngIf="!firstName.valid && firstName.touched"
+              class="alert-danger"
+              >First Name is required</span
+            >
+          </mat-form-field>
+
+          <mat-form-field class="example-full-width" appearance="fill">
+            <mat-label for="lastName">Last Name</mat-label>
+            <input
+              type="text"
+              class="form-control"
+              #lastName="ngModel"
+              [ngModel]="doctor.lastName"
+              id="lastName"
+              name="lastName"
+              required
+              matInput
+            />
+            <span
+              *ngIf="!lastName.valid && lastName.touched"
+              class="alert-danger"
+              >Last Name is required</span
+            >
+          </mat-form-field>
+
+          <mat-form-field class="example-full-width" appearance="fill">
+            <mat-label for="monthlySalary">Monthly Salary</mat-label>
+            <input
+              type="number"
+              class="form-control"
+              [ngModel]="doctor.monthlySalary"
+              id="monthlySalary"
+              name="monthlySalary"
+              number
+              matInput
+            />
+          </mat-form-field>
+
+          <mat-form-field class="example-full-width" appearance="fill">
+            <mat-label for="email">Email</mat-label>
+            <input
+              type="text"
+              class="form-control"
+              #email="ngModel"
+              [ngModel]="doctor.email"
+              id="email"
+              name="email"
+              email
+              required
+              matInput
+            />
+            <span *ngIf="!email.valid && email.touched" class="alert-danger"
+              >Email is required</span
+            >
+          </mat-form-field>
+
+          <mat-form-field class="example-full-width" appearance="fill">
+            <mat-label for="country">Country</mat-label>
+            <select
+              matNativeControl
+              class="form-control"
+              id="country"
+              [ngModel]="doctor.country"
+              name="country"
+            >
+              <option *ngFor="let item of countries">{{ item.name }}</option>
+            </select>
+          </mat-form-field>
+
+          <mat-form-field class="example-full-width" appearance="fill">
+            <mat-label for="appointments">Appointments</mat-label>
+            <input
+              type="text"
+              class="form-control"
+              [ngModel]="doctor.appointments"
+              id="appHighlight"
+              name="appointments"
+              matInput
+            />
+          </mat-form-field>
+
+          <mat-form-field class="example-full-width" appearance="fill">
+            <mat-label for="specialization">Specialization</mat-label>
+            <select
+              matNativeControl
+              class="form-control"
+              id="specialization"
+              [ngModel]="doctor.specialization"
+              name="specialization"
+            >
+              <option *ngFor="let item of specializations" [ngValue]="item">
+                {{ item.specializationName }}
+              </option>
+            </select>
+          </mat-form-field>
+
+          <mat-form-field class="example-full-width" appearance="fill">
+            <mat-label for="address">Address</mat-label>
+            <input
+              type="text"
+              class="form-control"
+              [ngModel]="doctor.address"
+              id="appHighlight"
+              name="address"
+              matInput
+            />
+          </mat-form-field>
+
+          <mat-form-field class="example-full-width" appearance="fill">
+            <mat-label for="notes">Notes</mat-label>
+            <input
+              type="text"
+              class="form-control"
+              [ngModel]="doctor.notes"
+              id="appHighlight"
+              name="notes"
+              matInput
+            />
+          </mat-form-field>
+
+          <mat-form-field class="example-full-width" appearance="fill">
+            <mat-label for="phoneNumber">Phone Number</mat-label>
+            <input
+              type="text"
+              class="form-control"
+              [ngModel]="doctor.phoneNumber"
+              id="appHighlight"
+              name="phoneNumber"
+              matInput
+            />
+          </mat-form-field>
+
+          <mat-form-field class="example-full-width" appearance="fill">
+            <mat-label for="iban">IBAN</mat-label>
+            <input
+              type="text"
+              class="form-control"
+              [ngModel]="doctor.iban"
+              id="appHighlight"
+              name="iban"
+              matInput
+            />
+          </mat-form-field>
+
+          <br />
+
+          <button
+            class="btn btn-primary btn-sm"
+            type="submit"
+            [disabled]="!editForm.valid"
+          >
+            Submit
+          </button>
+        </form>
+      </div>
+    </div>
+  </mat-card-content>
+</mat-card>

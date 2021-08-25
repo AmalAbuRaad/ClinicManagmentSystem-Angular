@@ -1,0 +1,41 @@
+<div class="row">
+  <div class="col-6">
+    <div class="row">
+      <div class="col-4">
+        <input
+          type="text"
+          placeholder="firstName"
+          class="form-control"
+          #firstName
+        />
+      </div>
+
+      <div class="col-4">
+        <input
+          type="text"
+          placeholder="lastName"
+          class="form-control"
+          #lastName
+        />
+      </div>
+      <div class="col-4">
+        <input
+          type="text"
+          placeholder="monthlySalary"
+          class="form-control"
+          #monthlySalary
+        />
+      </div>
+    </div>
+  </div>
+
+  <div class="col-6">
+    <button
+      style="margin: 30px"
+      class="btn btn-primary btn-sm"
+      (click)="addDoctor(firstName, lastName, monthlySalary)"
+    >
+      Add Doctor
+    </button>
+  </div>
+</div>

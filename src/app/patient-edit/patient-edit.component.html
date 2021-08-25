@@ -1,0 +1,152 @@
+<mat-card class="mat-elevation-z8" style="padding: 15px">
+  <mat-card-content>
+    <div class="row">
+      <div class="col col-12">
+        <form (ngSubmit)="onSubmit(editForm)" #editForm="ngForm">
+          <input type="hidden" [ngModel]="patient.id" name="id" />
+          <input type="hidden" [ngModel]="patient.key" name="key" />
+          <mat-form-field class="example-full-width" appearance="fill">
+            <mat-label for="firstName">First Name</mat-label>
+            <input
+              type="text"
+              class="form-control"
+              #firstName="ngModel"
+              [ngModel]="patient.firstName"
+              id="firstName"
+              name="firstName"
+              required
+              matInput
+            />
+            <span
+              *ngIf="!firstName.valid && firstName.touched"
+              class="alert-danger"
+              >First Name is required</span
+            >
+          </mat-form-field>
+
+          <mat-form-field class="example-full-width" appearance="fill">
+            <mat-label for="lastName">Last Name</mat-label>
+            <input
+              type="text"
+              class="form-control"
+              #lastName="ngModel"
+              [ngModel]="patient.lastName"
+              id="lastName"
+              name="lastName"
+              required
+              matInput
+            />
+            <span
+              *ngIf="!lastName.valid && lastName.touched"
+              class="alert-danger"
+              >Last Name is required</span
+            >
+          </mat-form-field>
+
+          <mat-form-field class="example-full-width" appearance="fill">
+            <mat-label for="age">Age</mat-label>
+            <input
+              type="number"
+              class="form-control"
+              [ngModel]="patient.age"
+              id="age"
+              name="age"
+              number
+              matInput
+            />
+          </mat-form-field>
+
+          <mat-form-field class="example-full-width" appearance="fill">
+            <mat-label for="email">Email</mat-label>
+            <input
+              type="text"
+              class="form-control"
+              #email="ngModel"
+              [ngModel]="patient.email"
+              id="email"
+              name="email"
+              email
+              required
+              matInput
+            />
+            <span *ngIf="!email.valid && email.touched" class="alert-danger"
+              >Email is required</span
+            >
+          </mat-form-field>
+
+          <mat-form-field class="example-full-width" appearance="fill">
+            <mat-label for="gender">Gender</mat-label>
+            <select
+              matNativeControl
+              class="form-control"
+              id="gender"
+              [ngModel]="patient.gender"
+              name="gender"
+            >
+              <option *ngFor="let item of genders">{{ item }}</option>
+            </select>
+          </mat-form-field>
+
+          <mat-form-field class="example-full-width" appearance="fill">
+            <mat-label for="country">Country</mat-label>
+            <select
+              matNativeControl
+              class="form-control"
+              id="country"
+              [ngModel]="patient.country"
+              name="country"
+            >
+              <option *ngFor="let item of countries">{{ item.name }}</option>
+            </select>
+          </mat-form-field>
+
+          <mat-form-field class="example-full-width" appearance="fill">
+            <mat-label for="phoneNumber">Phone Number</mat-label>
+            <input
+              type="text"
+              class="form-control"
+              [ngModel]="patient.phoneNumber"
+              id="appHighlight"
+              name="phoneNumber"
+              matInput
+            />
+          </mat-form-field>
+
+          <mat-form-field class="example-full-width" appearance="fill">
+            <mat-label for="address">Address</mat-label>
+            <input
+              type="text"
+              class="form-control"
+              [ngModel]="patient.address"
+              id="appHighlight"
+              name="address"
+              matInput
+            />
+          </mat-form-field>
+
+          <mat-form-field class="example-full-width" appearance="fill">
+            <mat-label for="ssn">SSN</mat-label>
+            <input
+              type="text"
+              class="form-control"
+              [ngModel]="patient.ssn"
+              id="appHighlight"
+              name="ssn"
+              matInput
+            />
+          </mat-form-field>
+
+          <br />
+
+          <button
+            class="btn btn-primary btn-sm"
+            type="submit"
+            [disabled]="!editForm.valid"
+          >
+            Submit
+          </button>
+        </form>
+      </div>
+    </div>
+  </mat-card-content>
+</mat-card>
