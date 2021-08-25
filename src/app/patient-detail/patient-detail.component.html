@@ -71,36 +71,19 @@
     </div>
   </mat-card-content>
 
-  <!-- <a class="btn btn-primary bt-sm" [routerLink]="['/patients', patient.id,'edit']">Edit</a> -->
   <mat-card-footer style="margin-left: 5px; margin-top: -60px">
     <button
+      class="edit-button"
       [routerLink]="['/patients', patient.id, 'edit']"
       (click)="onEdit(patient.id)"
-      style="
-        text-align: left;
-        margin: 10px;
-        margin-top: 0px;
-        font-size: 10px;
-        background-color: #2e5480;
-        border: none;
-        color: white;
-      "
     >
       <span>Edit Patient</span>
       <mat-icon style="padding-left: 5px">edit</mat-icon>
     </button>
     <button
+      class="delete-button"
       (click)="onDeletePatient(patient.id)"
       class="btn-danger"
-      style="
-        text-align: left;
-        margin: 10px;
-        margin-top: 0px;
-        font-size: 10px;
-
-        border: none;
-        color: white;
-      "
     >
       <span>Delete Patient</span>
       <mat-icon style="padding-left: 5px">delete</mat-icon>

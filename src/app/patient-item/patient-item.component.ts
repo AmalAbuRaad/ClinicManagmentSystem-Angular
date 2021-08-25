@@ -13,7 +13,7 @@ import { PatientsService } from '../services/patients.services';
   templateUrl: './patient-item.component.html',
   styleUrls: ['./patient-item.component.css']
 })
-export class PatientItemComponent implements OnInit, OnDestroy, OnChanges {
+export class PatientItemComponent implements OnInit {
   @Input('patientItem')
     patient: Patient; 
 
@@ -26,13 +26,6 @@ export class PatientItemComponent implements OnInit, OnDestroy, OnChanges {
     
   }
 
-  ngOnDestroy(){
-
-  }
-
-  ngOnChanges(){
-
-  }
   onCardClick(id:number){
     this.router.navigate(['/patients/', id]) 
   }

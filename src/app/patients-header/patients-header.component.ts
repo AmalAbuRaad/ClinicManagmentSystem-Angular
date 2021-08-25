@@ -19,12 +19,5 @@ export class PatientsHeaderComponent implements OnInit {
   
   addPatient(firstName:HTMLInputElement, lastName:HTMLInputElement, age:HTMLInputElement){
     this.patientsAdded.emit(new Patient(firstName.value, lastName.value, +age.value));
-    //console.log(`Patient was added`);
-  //  this.firstName = '';
-
-  //  // console.log(data.value);
-  //  // console.log(this.fName);
-
-  //  this.patients.push(new Patient(firstName.value, lastName.value, +age.value))
  }
 }

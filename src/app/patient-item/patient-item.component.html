@@ -27,17 +27,9 @@
 
   <mat-card-footer style="margin-left: 60px; margin-top: 0px">
     <button
+      class="edit-button"
       (click)="onEdit(patient.id)"
       [routerLink]="['/patients', patient.id, 'edit']"
-      style="
-        text-align: left;
-        margin: 10px;
-        margin-top: 0px;
-        font-size: 10px;
-        background-color: #2e5480;
-        border: none;
-        color: white;
-      "
     >
       <span>Edit Patient</span>
       <mat-icon style="padding-left: 5px">edit</mat-icon>

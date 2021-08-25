@@ -42,13 +42,6 @@ export class PatientEditComponent implements OnInit {
     this.patientService.updatePatient(editForm.value)
 
     this.editForm.reset()
-    // this.editForm.setValue({
-    //   firstName:'1',
-    //   lastName:'',
-    //   email: '',
-    //   gender: 'Male'
-    // });
-
     this.editForm.form.patchValue({
       gender: 'Male'
     })

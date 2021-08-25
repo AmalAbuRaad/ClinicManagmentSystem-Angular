@@ -8,3 +8,22 @@ mat-card-content div {
 .example-full-width {
   width: 100%;
 }
+
+.edit-button {
+  text-align: left;
+  margin: 10px;
+  margin-top: 0px;
+  font-size: 10px;
+  background-color: #2e5480;
+  border: none;
+  color: white;
+}
+
+.delete-button {
+  text-align: left;
+  margin: 10px;
+  margin-top: 0px;
+  font-size: 10px;
+  border: none;
+  color: white;
+}

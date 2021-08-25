@@ -12,28 +12,15 @@ import { PatientsService } from '../services/patients.services';
   styleUrls: ['./patients.component.css']
 })
 export class PatientsComponent implements OnInit {
-  firstName: string = 'Max'
-  patientName: string;
-  isWhite: boolean = true;
-  showMessage: boolean = true;
+
   patients: Patient[];
-  showDirective = true;
-  @ViewChild('firstName')
-  fName: string = '';
-  message: string = "Pipe test testing";
-  currentDate: Date = new Date();
   isLoading = false;
   error: string;
 
 
   constructor(private router: Router, private patientService: PatientsService) {
-    this.patientName = "Maria";
-    // this.patients = ['Joe', 'Lee', 'Sara'];
 
 
-    setTimeout(() => {
-      this.showMessage = false;
-    }, 2000);
   }
 
   ngOnInit(): void {
@@ -47,10 +34,6 @@ export class PatientsComponent implements OnInit {
         (error: HttpErrorResponse) => {
           this.error = error.message;
         });;
-  }
-
-  getFullName() {
-    return this.patientName;
   }
 
 
